@@ -2,7 +2,7 @@
 
 <img src="./src/icons/icon.png" alt="Movie Search Icon" width="50" height="50">
 
-This Firefox extension enhances your browsing experience by allowing you to search selected text on IMDb, Trakt, or Letterboxd directly from the context menu. Simply highlight the name of a movie or TV show, right-click, and choose your preferred platform to view search results.
+This Firefox extension enhances your browsing experience by allowing you to search selected text on IMDb, Trakt, or Letterboxd directly from the context menu. Simply highlight the name of a movie or TV show on any website, right-click, and choose your preferred platform to view search results.
 
 ## Features
 
