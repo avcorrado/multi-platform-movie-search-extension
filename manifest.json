@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "movie-context-menu",
+  "description": "right click search for a movie on a webpage",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "permissions": ["contextMenus", "activeTab"],
+  "background": {
+    "scripts": ["background_script.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_popup": "browserAction/index.html",
+    "default_title": "movie-context-menu"
+  },
+  "page_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_popup": "pageAction/index.html",
+    "default_title": "movie-context-menu"
+  },
+  "options_ui": {
+    "page": "options/index.html"
+  }
+}
