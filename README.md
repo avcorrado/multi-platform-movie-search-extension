@@ -11,7 +11,7 @@ This Firefox extension enhances your browsing experience by allowing you to sear
 
 ## Installation
 
-You can download the extension from the [Firefox Add-ons store](https://addons.mozilla.org/).
+You can download the extension from the [Firefox Add-ons store](https://addons.mozilla.org/…/imdb-trakt-letterboxd-search).
 
 ## Permissions
 
