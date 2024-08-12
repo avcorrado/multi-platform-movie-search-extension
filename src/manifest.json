@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Movie Search",
+  "description": "Right click to search for a movie on IMDb, Trakt, or Letterboxd.",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "permissions": ["contextMenus", "activeTab"],
+  "background": {
+    "scripts": ["background_script.js"],
+    "persistent": false
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "movie-search@yourdomain.com",
+      "strict_min_version": "64.0"
+    }
+  }
+}
