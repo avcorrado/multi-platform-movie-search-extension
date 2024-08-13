@@ -24,7 +24,7 @@ function handleContextMenuClick(info) {
   switch (info.menuItemId) {
     case 'searchIMDb':
       browser.tabs.create({
-        url: `https://www.imdb.com/find?q=${encodeURIComponent(query)}`,
+        url: `https://www.imdb.com/find?s=tt&q=${encodeURIComponent(query)}`,
       });
       break;
 
@@ -36,12 +36,11 @@ function handleContextMenuClick(info) {
 
     case 'searchLetterboxd':
       browser.tabs.create({
-        url: `https://letterboxd.com/search/${encodeURIComponent(query)}/`,
+        url: `https://letterboxd.com/search/films/${encodeURIComponent(query)}/`,
       });
       break;
   }
 }
 
-// Add listeners
 browser.runtime.onInstalled.addListener(createContextMenu);
 browser.contextMenus.onClicked.addListener(handleContextMenuClick);
