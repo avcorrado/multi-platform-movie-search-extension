@@ -18,29 +18,31 @@ function createContextMenu() {
   });
 }
 
-function handleContextMenuClick(info) {
+function handleContextMenuClick(info, tab) {
   const query = info.selectionText;
 
+  let url;
   switch (info.menuItemId) {
     case 'searchIMDb':
-      browser.tabs.create({
-        url: `https://www.imdb.com/find?s=tt&q=${encodeURIComponent(query)}`,
-      });
+      url = `https://www.imdb.com/find?s=tt&q=${encodeURIComponent(query)}`;
       break;
-
     case 'searchTrakt':
-      browser.tabs.create({
-        url: `https://trakt.tv/search?query=${encodeURIComponent(query)}`,
-      });
+      url = `https://trakt.tv/search?query=${encodeURIComponent(query)}`;
       break;
-
     case 'searchLetterboxd':
-      browser.tabs.create({
-        url: `https://letterboxd.com/search/films/${encodeURIComponent(query)}/`,
-      });
+      url = `https://letterboxd.com/search/films/${encodeURIComponent(query)}/`;
       break;
+  }
+
+  if (url) {
+    browser.tabs.create({
+      url,
+      index: tab.index + 1,
+      active: true           
+    });
   }
 }
 
-browser.runtime.onInstalled.addListener(createContextMenu);
 browser.contextMenus.onClicked.addListener(handleContextMenuClick);
+
+browser.runtime.onInstalled.addListener(createContextMenu);
